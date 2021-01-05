@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33cf8da-0b3b-4f60-87b7-275c7b7ce641" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/flask/log/flask.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
