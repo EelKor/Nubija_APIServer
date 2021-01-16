@@ -77,10 +77,6 @@ class DBAccess(nubija.NubijaData):
         if not type(vno) == type(int):
             vno = int(vno)
 
-<<<<<<< HEAD
-        # Vno가 0 이면 전체 데이터 불러옴
-=======
->>>>>>> release-v1.0
         if vno == 0:
             __readsql = "SELECT Emptycnt, Parkcnt, Vno FROM public_data.NubijaData"
             self.cursor.execute(__readsql)
