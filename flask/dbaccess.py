@@ -66,8 +66,11 @@ class DBAccess(nubija.NubijaData):
         print("excute_time:",time.time()-start)
 
     def read(self, vno):
-        if not type(vno)==type(int):
+
+        if not type(vno) == type(int):
             vno = int(vno)
+
+        # Vno가 0 이면 전체 데이터 불러옴
         if vno == 0:
             __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData"
             self.cursor.execute(__readsql)
