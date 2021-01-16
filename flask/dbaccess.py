@@ -68,10 +68,15 @@ class DBAccess(nubija.NubijaData):
     def read(self, vno):
         if not type(vno)==type(int):
             vno = int(vno)
+        if vno == 0:
+            __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData"
+            self.cursor.execute(__readsql)
+            return self.cursor.fetchall()
 
-        __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData WHERE Vno=%s"
-        self.cursor.execute(__readsql, vno)
-        return self.cursor.fetchall()
+        else:
+            __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData WHERE Vno=%s"
+            self.cursor.execute(__readsql, vno)
+            return self.cursor.fetchall()
 
 
     def close(self):
