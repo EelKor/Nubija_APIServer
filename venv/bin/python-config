@@ -1,4 +1,4 @@
-#!/home/lessnas/RestApiServer/venv/bin/python
+#!/home/lessnas/NubijaApiServer/venv/bin/python
 
 import sys
 import getopt
