@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ChangeListManager">
@@ -334,30 +320,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="91" key="#검사/0.0.1536.824@0.0.1536.824" timestamp="1604660301347" />
-    <state width="1515" height="284" key="GridCell.Tab.0.bottom" timestamp="1610777385912">
+    <state width="1515" height="147" key="GridCell.Tab.0.bottom" timestamp="1610778316439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="284" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610777385912" />
+    <state width="1515" height="147" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610778316439" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604661282921" />
-    <state width="1515" height="284" key="GridCell.Tab.0.center" timestamp="1610777385912">
+    <state width="1515" height="147" key="GridCell.Tab.0.center" timestamp="1610778316439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="284" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610777385912" />
+    <state width="1515" height="147" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610778316439" />
     <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604661282920" />
-    <state width="1515" height="284" key="GridCell.Tab.0.left" timestamp="1610777385912">
+    <state width="1515" height="147" key="GridCell.Tab.0.left" timestamp="1610778316439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="284" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610777385912" />
+    <state width="1515" height="147" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610778316439" />
     <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604661282919" />
-    <state width="1515" height="284" key="GridCell.Tab.0.right" timestamp="1610777385912">
+    <state width="1515" height="147" key="GridCell.Tab.0.right" timestamp="1610778316439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="284" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610777385912" />
+    <state width="1515" height="147" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610778316439" />
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604661282920" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1610775209778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610775209778" />
+    <state x="518" y="124" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610777534847">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="124" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1610777534847" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604559127867">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
