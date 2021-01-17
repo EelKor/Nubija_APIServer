@@ -1,4 +1,4 @@
-#!/home/lessnas/RestApiServer/venv/bin/python2
+#!/home/lessnas/NubijaApiServer/venv/bin/python2
 # -*- coding: utf-8 -*-
 import re
 import sys

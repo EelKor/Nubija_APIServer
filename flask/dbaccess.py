@@ -1,5 +1,6 @@
 import pymysql
 from public_data import nubija
+from time import time
 
 class DBAccess(nubija.NubijaData):
 
@@ -7,12 +8,21 @@ class DBAccess(nubija.NubijaData):
 
         # __db_login은 보안을 위해 privite
         self.__db_login = pymysql.connect(
+            #user='publicdata',
+            #passwd='1q2w3e4r',
+            #host='localhost',
+            #port=33306,
+            #db='public_data',
+            #charset='utf8'
+
+            # 원격 접속때 이용
             user='publicdata',
             passwd='1q2w3e4r',
             host='db.lessnas.me',
             port=33306,
             db='public_data',
             charset='utf8'
+
         )
         # pymysql 을 사용하기 위한 기본 설정
         self.cursor = self.__db_login.cursor(pymysql.cursors.DictCursor)
@@ -50,7 +60,6 @@ class DBAccess(nubija.NubijaData):
     # 비교한후, 변동사항이 있는 것만 업로드 할 수있도록 코드 작성예정.
 
     def update(self):
-        start = time.time()
         __updatesql = "UPDATE NubijaData SET  Emptycnt=%s, Parkcnt=%s WHERE Vno=%s"
         super().__init__()
         data = []
@@ -63,15 +72,21 @@ class DBAccess(nubija.NubijaData):
         self.cursor.executemany(__updatesql, data)
         self.__db_login.commit()
         print(self.cursor.rowcount, "record inserted")
-        print("excute_time:",time.time()-start)
 
     def read(self, vno):
-        if not type(vno)==type(int):
+
+        if not type(vno) == type(int):
             vno = int(vno)
 
-        __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData WHERE Vno=%s"
-        self.cursor.execute(__readsql, vno)
-        return self.cursor.fetchall()
+        if vno == 0:
+            __readsql = "SELECT Vno, Emptycnt, Parkcnt FROM public_data.NubijaData"
+            self.cursor.execute(__readsql)
+            return self.cursor.fetchall()
+
+        else:
+            __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.NubijaData WHERE Vno=%s"
+            self.cursor.execute(__readsql, vno)
+            return self.cursor.fetchall()
 
 
     def close(self):
