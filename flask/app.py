@@ -22,6 +22,7 @@ logger.addHandler(fileHandler)
 
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 db = DBAccess()
 
 @app.route('/')
@@ -32,19 +33,21 @@ def index():
 def terminalinfo(id):
     id = int(id)
     data = db.read(id)
-    return jsonify(data)
+    return jsonify(data[::])
 
 @app.errorhandler(404)
 def page_not_found(error):
     logger.exception(error)
+    return render_template("error_404.html"), 404
 
 
 
 @app.errorhandler(500)
 def internal_server_error(error):
     logger.exception(error)
+    return render_template("error_500.html"), 500
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
 

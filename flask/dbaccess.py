@@ -1,5 +1,6 @@
 import pymysql
 from public_data import nubija
+from time import time
 
 class DBAccess(nubija.NubijaData):
 
@@ -78,7 +79,7 @@ class DBAccess(nubija.NubijaData):
             vno = int(vno)
 
         if vno == 0:
-            __readsql = "SELECT Emptycnt, Parkcnt, Vno FROM public_data.NubijaData"
+            __readsql = "SELECT Vno, Emptycnt, Parkcnt FROM public_data.NubijaData"
             self.cursor.execute(__readsql)
             return self.cursor.fetchall()
 
