@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand />
-    <select />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/release-v1.0" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33cf8da-0b3b-4f60-87b7-275c7b7ce641" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/flask/templates/error_404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask/templates/error_500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask/dbaccess.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/dbaccess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flask/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/restapiserver" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,11 +194,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.app" />
       <item itemvalue="Python.app (1)" />
+      <item itemvalue="Python.app (2)" />
+      <item itemvalue="Python.app" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.tets" />
-      <item itemvalue="Python.app (2)" />
     </list>
     <recent_temporary>
       <list>
@@ -214,7 +230,19 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/release-v1.0" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
