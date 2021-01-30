@@ -22,15 +22,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c33cf8da-0b3b-4f60-87b7-275c7b7ce641" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/updater/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updater/dbaccess.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updater/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updater/public_data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updater/public_data/bus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/updater/public_data/nubija.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c33cf8da-0b3b-4f60-87b7-275c7b7ce641" name="디폴트 변경 목록" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
