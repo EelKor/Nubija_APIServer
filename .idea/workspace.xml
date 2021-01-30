@@ -23,10 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33cf8da-0b3b-4f60-87b7-275c7b7ce641" name="디폴트 변경 목록" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/dbaccess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/public_data/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/public_data/bus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/updater/public_data/nubija.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask/dbaccess.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask/dbaccess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +65,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/flask/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/updater" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Owncloud\Programing\Docker-RestAPI\updater" />
       <recent name="D:\Owncloud\Project\NubijaApiServer\flask\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app (2)">
+  <component name="RunManager" selected="Python.main (1)">
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NubijaApiServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,6 +160,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NubijaApiServer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/updater" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/updater/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NubijaApiServer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -198,26 +223,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="flask/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="flask/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.flask/Dockerfile" />
       <item itemvalue="Python.app" />
       <item itemvalue="Python.app (1)" />
       <item itemvalue="Python.app (2)" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.tets" />
+      <item itemvalue="Python.main (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.app (2)" />
-        <item itemvalue="Docker.flask/Dockerfile" />
         <item itemvalue="Python.tets" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.app (1)" />
@@ -285,25 +302,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="91" key="#검사/0.0.1536.824@0.0.1536.824" timestamp="1604660301347" />
-    <state width="1515" height="428" key="GridCell.Tab.0.bottom" timestamp="1612002861233">
+    <state x="447" y="185" key="FileChooserDialogImpl" timestamp="1612010684679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="428" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612002861233" />
+    <state x="447" y="185" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612010684679" />
+    <state width="1515" height="200" key="GridCell.Tab.0.bottom" timestamp="1612012778584">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="200" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612012778584" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604661282921" />
-    <state width="1515" height="428" key="GridCell.Tab.0.center" timestamp="1612002861232">
+    <state width="1515" height="200" key="GridCell.Tab.0.center" timestamp="1612012778584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="428" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612002861232" />
+    <state width="1515" height="200" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612012778584" />
     <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604661282920" />
-    <state width="1515" height="428" key="GridCell.Tab.0.left" timestamp="1612002861232">
+    <state width="1515" height="200" key="GridCell.Tab.0.left" timestamp="1612012778584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="428" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612002861232" />
+    <state width="1515" height="200" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612012778584" />
     <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604661282919" />
-    <state width="1515" height="428" key="GridCell.Tab.0.right" timestamp="1612002861233">
+    <state width="1515" height="200" key="GridCell.Tab.0.right" timestamp="1612012778584">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="428" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612002861233" />
+    <state width="1515" height="200" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1612012778584" />
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604661282920" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610857817014">
       <screen x="0" y="0" width="1536" height="824" />
