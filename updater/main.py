@@ -8,7 +8,7 @@ def dbUpdater() :
         db.update()
         db.close()
 
-        sleep(10)
+        sleep(300)
 
 def test() :
     while True :
