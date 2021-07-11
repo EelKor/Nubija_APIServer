@@ -9,13 +9,13 @@ class DBAccess(nubija.NubijaData):
 
         # __db_login은 보안을 위해 privite
         self.__db_login = pymysql.connect(
-            # user='publicdata',
-            # passwd='1q2w3e4r',
-            # host='localhost',
-            # port=33306,
-            # db='public_data',
-            # charset='utf8'
-
+            #user='publicdata',
+            #passwd='1q2w3e4r',
+            #host='127.0.0.1',
+            #port=3316,
+            #db='public_data',
+            #charset='utf8'
+#
             # 원격 접속때 이용
             user='publicdata',
             passwd='1q2w3e4r',
@@ -23,7 +23,6 @@ class DBAccess(nubija.NubijaData):
             port=33306,
             db='public_data',
             charset='utf8'
-
         )
         # pymysql 을 사용하기 위한 기본 설정
         self.cursor = self.__db_login.cursor(pymysql.cursors.DictCursor)
