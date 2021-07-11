@@ -1,5 +1,6 @@
 import pymysql
 from public_data import nubija
+import datetime
 
 
 class DBAccess(nubija.NubijaData):
@@ -27,11 +28,22 @@ class DBAccess(nubija.NubijaData):
         # pymysql 을 사용하기 위한 기본 설정
         self.cursor = self.__db_login.cursor(pymysql.cursors.DictCursor)
 
+
+
+
+
+
     ##### 메소드 updateall 설명 ######
     # 데이터베이스를 업데이트 하는 것으로 데이터베이스내 모든 데이터를 최신화
     def initupload(self):
+        self.__initsql = "truncate nubijaInfo"
         self.__sql = "INSERT INTO nubijaInfo (Vno, Emptycnt, Parkcnt) " \
                      "VALUES(%s, %s, %s)"
+
+        # 데이터 베이스 초기화 실시
+        self.cursor.execute(self.__initsql)
+        self.__db_login.commit()
+
 
         # 새로운 누비자 데이터를 불러오기
         super().__init__()
@@ -54,6 +66,11 @@ class DBAccess(nubija.NubijaData):
         self.__db_login.commit()
         print(self.cursor.rowcount, "recored inserted")
 
+
+
+
+
+
     # update 메소드 설명
     # MySQL 서버의 NubijaData테이블 업데이트 메소드
     # 현재 소요시간이 많이 걸리는데 반복문 분석해 최적화 실시할것
@@ -63,17 +80,47 @@ class DBAccess(nubija.NubijaData):
 
     def update(self):
         __updatesql = "UPDATE nubijaInfo SET  Emptycnt=%s, Parkcnt=%s WHERE Vno=%s"
+        __readsql = "SELECT * FROM nubijaInfo"
+        __insertStationlogs = ""
         super().__init__()
         data = []
+        delta = []
 
+        # 새로운 데이터 가져오기
         for i in range(len(self.rawdata) - 1):
             dict_raw = dict(self.rawdata[i])
             dict_d = [dict_raw['Emptycnt'], dict_raw['Parkcnt'], int(dict_raw['Vno'])]
             data.append(dict_d)
-        # print(data)
-        self.cursor.executemany(__updatesql, data)
-        self.__db_login.commit()
+
+
+        # 기존 데이터 불러오기
+        self.cursor.execute(__readsql)
+        oldraw = self.cursor.fetchall()
+
+        now = datetime.datetime.now()
+        delta.append(now.strftime('%Y-%m-%d %H:%M:%S'))
+       
+        # 각 정류장의 변화량 계산
+        for i in range(len(oldraw) - 1):
+        
+            old_raw = dict(oldraw[i])
+            old = [old_raw['Emptycnt'], old_raw['Parkcnt'], old_raw['Vno']]
+            new_empty = data[i]
+            delta.append([int(new_empty[0]) - int(old[0]), int(old[2])])
+
+
+            
+        print(delta)
+
+        #print(data)
+        #self.cursor.executemany(__updatesql, data)
+        #self.__db_login.commit()
         print(self.cursor.rowcount, "record inserted")
+
+
+
+
+
 
     def read(self, vno):
 
@@ -91,6 +138,17 @@ class DBAccess(nubija.NubijaData):
             __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.nubijaInfo WHERE Vno=%s"
             self.cursor.execute(__readsql, vno)
             return self.cursor.fetchall()
+
+    # 284개의 테이블 컬럼 생성
+    def addcolumn(self):
+        __sql = """ALTER TABLE StationLogs ADD COLUMN %s char(10)"""
+        for i in range(1,285):
+            self.cursor.execute(__sql,(i))
+
+        self.__db_login.commit()   
+
+
+
 
     def close(self):
         self.cursor.close()
