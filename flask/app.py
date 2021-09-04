@@ -13,15 +13,15 @@ logging.basicConfig(level="DEBUG")
 logger = logging.getLogger(__name__)
 
 # 로그 파일 제작 및 기록 형식 지정
-fileHandler = FileHandler('log/flask.log')
+fileHandler = FileHandler('/home/sslee/Dev/Nubija_APIServer/log/flask.log')
 fileHandler.setFormatter(
     Formatter('[%(asctime)s][%(levelname)s|%(filename)s:%(lineno)s] >> %(message)s'))
-fileHandler = logging.handlers.RotatingFileHandler(filename='./log/flask.log')
+fileHandler = logging.handlers.RotatingFileHandler(filename='/home/sslee/Dev/Nubija_APIServer/log/flask.log')
 logger.addHandler(fileHandler)
 
 # 초기 DB 업데이트
 db = DBAccess()
-db.update()
+db.initupload()
 db.close()
 
 # Flask 객체 및 DB 접속 객체 생성
@@ -34,12 +34,14 @@ api = Api(app,
           contact="cesf99@gnu.ac.kr"
           )
 
+
 @api.route("/nubija")
 class Nubija(Resource):
     def get(self):
         db = DBAccess()
         data = db.read(0)
         db.close()
+        logger.log("Nubija api called")
         return data
 
 
