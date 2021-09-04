@@ -1,5 +1,6 @@
 import pymysql
 from public_data import nubija
+from time import time
 
 
 class DBAccess(nubija.NubijaData):
@@ -26,12 +27,13 @@ class DBAccess(nubija.NubijaData):
         )
         # pymysql 을 사용하기 위한 기본 설정
         self.cursor = self.__db_login.cursor(pymysql.cursors.DictCursor)
+        self.cursor.execute("set names utf8")
 
     ##### 메소드 updateall 설명 ######
     # 데이터베이스를 업데이트 하는 것으로 데이터베이스내 모든 데이터를 최신화
     def initupload(self):
-        self.__sql = "INSERT INTO nubijaInfo (Vno, Emptycnt, Parkcnt) " \
-                     "VALUES(%s, %s, %s)"
+        self.__sql = "INSERT INTO nubijaInfo2 (Vno, Emptycnt, Parkcnt, Lat, Lng, Tmname) " \
+                     "VALUES(%s, %s, %s, %s, %s, %s)"
 
         # 새로운 누비자 데이터를 불러오기
         super().__init__()
@@ -47,7 +49,9 @@ class DBAccess(nubija.NubijaData):
             dict_d.append(int(dict_raw['Vno']))
             dict_d.append(dict_raw['Emptycnt'])
             dict_d.append(dict_raw["Parkcnt"])
-
+            dict_d.append(float(dict_raw["Latitude"]))
+            dict_d.append(float(dict_raw["Longitude"]))
+            dict_d.append(dict_raw["Tmname"])
             data.append(dict_d)
 
         self.cursor.executemany(self.__sql, data)
@@ -62,7 +66,7 @@ class DBAccess(nubija.NubijaData):
     # 비교한후, 변동사항이 있는 것만 업로드 할 수있도록 코드 작성예정.
 
     def update(self):
-        __updatesql = "UPDATE nubijaInfo SET  Emptycnt=%s, Parkcnt=%s WHERE Vno=%s"
+        __updatesql = "UPDATE nubijaInfo2 SET  Emptycnt=%s, Parkcnt=%s WHERE Vno=%s"
         super().__init__()
         data = []
 
@@ -73,7 +77,7 @@ class DBAccess(nubija.NubijaData):
         # print(data)
         self.cursor.executemany(__updatesql, data)
         self.__db_login.commit()
-        print(self.cursor.rowcount, "record inserted")
+        # print(self.cursor.rowcount, "record inserted")
 
     def read(self, vno):
 
@@ -82,13 +86,13 @@ class DBAccess(nubija.NubijaData):
 
         if vno == 0:
 
-            __readsql = "SELECT Emptycnt, Parkcnt, Vno FROM public_data.nubijaInfo"
+            __readsql = "SELECT Emptycnt, Parkcnt, Vno, Lat, Lng, Tmname FROM public_data.nubijaInfo2"
 
             self.cursor.execute(__readsql)
             return self.cursor.fetchall()
 
         else:
-            __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.nubijaInfo WHERE Vno=%s"
+            __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.nubijaInfo2 WHERE Vno=%s"
             self.cursor.execute(__readsql, vno)
             return self.cursor.fetchall()
 

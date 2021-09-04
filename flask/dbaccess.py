@@ -85,7 +85,7 @@ class DBAccess(nubija.NubijaData):
 
         if vno == 0:
 
-            __readsql = "SELECT Emptycnt, Parkcnt, Vno FROM public_data.nubijaInfo2"
+            __readsql = "SELECT Emptycnt, Parkcnt, Vno, Lat, Lng, Tmname FROM public_data.nubijaInfo2"
 
             self.cursor.execute(__readsql)
             return self.cursor.fetchall()
