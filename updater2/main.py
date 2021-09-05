@@ -11,14 +11,14 @@ def dbUpdater() :
         # 현재시간이 누비자 운영시간이면 프로그램 작동
         # 아니면 휴식
         now = datetime.now(timezone('Asia/Seoul'))
-        now = now.hour
-        minute = now.minute
+        now_hour = now.hour
+        now_minute = now.minute
 
-        if now >= 1 and now < 4:
+        if now_hour >= 1 and now_hour < 4:
             pass
 
         else:
-            if minute % 5 == 0:
+            if now_minute % 5 == 0:
                 prev_TerminalInfo = []
                 new_TerminalInfo = []
                 result = []
