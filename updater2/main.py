@@ -1,6 +1,7 @@
 from dbaccess import DBAccess
 from time import sleep
-from datetime import datetime, timezone
+from datetime import datetime
+from pytz import timezone
 import threading
 
 # 데이터 베이스 업데이트 함수
