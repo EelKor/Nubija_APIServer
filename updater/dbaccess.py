@@ -27,7 +27,6 @@ class DBAccess(nubija.NubijaData):
         )
         # pymysql 을 사용하기 위한 기본 설정
         self.cursor = self.__db_login.cursor(pymysql.cursors.DictCursor)
-        self.cursor.execute("set names utf8")
 
     ##### 메소드 updateall 설명 ######
     # 데이터베이스를 업데이트 하는 것으로 데이터베이스내 모든 데이터를 최신화
@@ -95,6 +94,14 @@ class DBAccess(nubija.NubijaData):
             __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.nubijaInfo2 WHERE Vno=%s"
             self.cursor.execute(__readsql, vno)
             return self.cursor.fetchall()
+
+        
+    def stationLogInsert(self, stationLogData):
+        __insertLogs = "INSERT INTO StationLogs (Date, vno, delta) VALUES(%s, %s, %s)"
+        self.cursor.executemany(__insertLogs, stationLogData)
+        self.__db_login.commit()
+
+
 
     def close(self):
         self.cursor.close()

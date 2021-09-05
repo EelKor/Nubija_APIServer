@@ -95,5 +95,13 @@ class DBAccess(nubija.NubijaData):
             self.cursor.execute(__readsql, vno)
             return self.cursor.fetchall()
 
+        
+    def stationLogInsert(self, stationLogData):
+        __insertLogs = "INSERT INTO StationLogs (Date, vno, delta) VALUES(%s, %s, %s)"
+        self.cursor.executemany(__insertLogs, stationLogData)
+        self.__db_login.commit()
+
+
+
     def close(self):
         self.cursor.close()

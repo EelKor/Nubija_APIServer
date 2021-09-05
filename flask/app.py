@@ -1,6 +1,5 @@
 from json.decoder import JSONDecoder
-from flask import Flask, jsonify, render_template
-from flask.json import JSONEncoder
+from flask import Flask, json, make_response
 from flask_restx import Api, Resource
 from dbaccess import DBAccess
 
@@ -29,7 +28,10 @@ class Nubija(Resource):
         db = DBAccess()
         data = db.read(0)
         db.close()
-        return data
+
+        res = json.dumps(data, ensure_ascii=False)
+        res = make_response(res)
+        return res
 
 
 if __name__ == "__main__":
