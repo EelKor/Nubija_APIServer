@@ -2,21 +2,21 @@ version: "3"
 
 services: 
     flask:
-        build: ./flask
-        container_name: flask
+        build: ./flask2
+        container_name: flask2
         restart: always
         environment: 
             - APP_NAME=FlaskTest
         expose:
-            - 8080
+            - 8081
 
     nginx:
-        build: ./nginx
-        container_name: nginx
+        build: ./nginx2
+        container_name: nginx2
         restart: always
         ports:
-            - "5000:5000"
+            - "5001:5001"
 
     updater:
-        build: ./updater
-        container_name: updater
+        build: ./updater2
+        container_name: updater2
