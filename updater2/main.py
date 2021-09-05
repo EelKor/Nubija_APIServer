@@ -1,6 +1,6 @@
 from dbaccess import DBAccess
 from time import sleep
-from datetime import datetime
+from datetime import datetime, timezone
 import threading
 
 # 데이터 베이스 업데이트 함수
@@ -35,7 +35,7 @@ def dbUpdater() :
         # 차이값 계산
         if len(new_TerminalInfo) == len(prev_TerminalInfo):
             for i in range(len(new_TerminalInfo)-1):
-                date = datetime.now()
+                date = datetime.now(timezone('Asia/Seoul'))
                 date = date.strftime("%Y-%m-%d %H:%M:%S")
                 vno = new_TerminalInfo[i][0]
                 diff = new_TerminalInfo[i][1] - prev_TerminalInfo[i][1]
