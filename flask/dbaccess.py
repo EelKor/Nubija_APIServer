@@ -85,7 +85,7 @@ class DBAccess(nubija.NubijaData):
 
         if vno == 0:
 
-            __readsql = "SELECT Emptycnt, Parkcnt, Vno FROM public_data.nubijaInfo2"
+            __readsql = "SELECT Emptycnt, Parkcnt, Vno, Lat, Lng, Tmname FROM public_data.nubijaInfo2"
 
             self.cursor.execute(__readsql)
             return self.cursor.fetchall()
@@ -94,6 +94,14 @@ class DBAccess(nubija.NubijaData):
             __readsql = "SELECT Emptycnt, Parkcnt FROM public_data.nubijaInfo2 WHERE Vno=%s"
             self.cursor.execute(__readsql, vno)
             return self.cursor.fetchall()
+
+        
+    def stationLogInsert(self, stationLogData):
+        __insertLogs = "INSERT INTO StationLogs (Date, vno, delta) VALUES(%s, %s, %s)"
+        self.cursor.executemany(__insertLogs, stationLogData)
+        self.__db_login.commit()
+
+
 
     def close(self):
         self.cursor.close()
