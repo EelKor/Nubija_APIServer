@@ -4,11 +4,6 @@ from flask_restx import Api, Resource
 from dbaccess import DBAccess
 
 
-# 초기 DB 업데이트
-db = DBAccess()
-db.update()
-db.close()
-
 # Flask 객체 및 DB 접속 객체 생성
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
