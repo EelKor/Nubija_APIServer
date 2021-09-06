@@ -6,19 +6,26 @@ import threading
 
 # 데이터 베이스 업데이트 함수
 def dbUpdater() :
+    lastUpdateMinute = 0
 
     while True :
         # 현재시간이 누비자 운영시간이면 프로그램 작동
         # 아니면 휴식
         now = datetime.now(timezone('Asia/Seoul'))
+        strDate = now.strftime("%Y-%m-%d %H:%M:%S")
         now_hour = now.hour
         now_minute = now.minute
 
         if now_hour >= 1 and now_hour < 4:
-            pass
+            sleep(60)
+            print("Nubija Station CLOSED" , strDate)
 
         else:
-            if now_minute % 5 == 0:
+            if (now_minute % 5 == 0) and (now_minute != lastUpdateMinute):
+                lastUpdateMinute = now_minute
+                print("updateTime: ", strDate)
+                print("lastUpdateMin: ", lastUpdateMinute)
+                print("Update start")
                 prev_TerminalInfo = []
                 new_TerminalInfo = []
                 result = []
@@ -34,7 +41,8 @@ def dbUpdater() :
                     prev_TerminalInfo.append(temp)
 
                 # 데이터베이스 업데이트
-                db.update()
+                #db.update()
+                print("db updated")
 
                 # 새로운 데이터 불러오기
                 new_data = db.read(0)
