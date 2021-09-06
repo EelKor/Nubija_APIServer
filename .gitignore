@@ -3,3 +3,4 @@
 temp/
 *.pyc
 venv/
+updater2/test.py
