@@ -17,8 +17,7 @@ def dbUpdater() :
         now_minute = now.minute
 
         if now_hour >= 1 and now_hour < 4:
-            sleep(60)
-            print("Nubija Station CLOSED" , strDate)
+            pass
 
         else:
             if (now_minute % 5 == 0) and (now_minute != lastUpdateMinute):
@@ -41,8 +40,7 @@ def dbUpdater() :
                     prev_TerminalInfo.append(temp)
 
                 # 데이터베이스 업데이트
-                #db.update()
-                print("db updated")
+                db.update()
 
                 # 새로운 데이터 불러오기
                 new_data = db.read(0)
