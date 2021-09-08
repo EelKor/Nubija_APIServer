@@ -17,7 +17,7 @@ def dbUpdater() :
         now_minute = now.minute
 
         if now_hour >= 1 and now_hour < 4:
-            pass
+            sleep(0.25)
 
         else:
             if (now_minute % 5 == 0) and (now_minute != lastUpdateMinute):
@@ -65,7 +65,7 @@ def dbUpdater() :
                 db.close()
 
             else:
-                pass
+                sleep(0.25)
 
 # 스레딩을 이용해여 동시 실행
 if __name__ == '__main__':

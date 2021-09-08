@@ -20,3 +20,4 @@ services:
     updater:
         build: ./updater2
         container_name: updater2
+        restart: always
